@@ -1,0 +1,302 @@
+// ------- fonts ------- //
+@font-face {
+    font-family: 'Gotham Pro';
+    src: local('Gotham Pro Regular'), local('Gotham-Pro-Regular'),
+        url('./fonts/GothamPro.woff2') format('woff2'),
+        url('./fonts/GothamPro.woff') format('woff'),
+        url('./fonts/GothamPro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: local('Gotham Pro Medium'), local('Gotham-Pro-Medium'),
+        url('./fonts/GothamPro-Medium.woff2') format('woff2'),
+        url('./fonts/GothamPro-Medium.woff') format('woff'),
+        url('./fonts/GothamPro-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// ------- colors ------- // 
+$green: #70a74b;
+$yellow: #fbd229;
+$red: #ed5243;
+
+$light-green: #b5d0a2;
+$light-yellow: #fae691;
+$light-red: #f3a69e;
+
+$grey: #ccc;
+$light-grey: #ececec;
+$dark-grey: #9d9d9d;
+
+$bg-color: #f9f9f9;
+
+.block{
+    max-width: 300px;
+    height: 450px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 15px #999;
+    padding: 20px;
+    font-family: 'GothamPro', sans-serif;
+
+    &-diagram{
+        border-top-left-radius: 10px;
+        border: 1px solid $dark-grey;
+        border-right: none;
+        height: 180px;
+        width: 220px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    &-rating{
+        border-bottom-left-radius: 10px;
+        border: 1px solid $dark-grey;
+        border-right: none;
+        border-top: none;
+        height: 40px;
+        width: 220px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+}
+
+.diagram{
+    background: #fff;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -70px;
+    right: 0;
+    &-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+    }
+    .icon{
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        fill: $grey;
+    }
+    .svg{
+        width: 200px;
+        height: 200px;
+        fill: none;
+        stroke-width: 5;
+        stroke-linecap: round;
+        transform-origin: center center;
+        transform: rotate(-72deg);
+        stroke-dasharray: 566;
+        stroke-dashoffset: 60;
+        .grey{
+            stroke: $light-grey;
+        }
+        .green{
+            stroke: $green;
+            stroke-dasharray: 566;
+            stroke-dashoffset: 566;
+            animation: green 3s ease-in-out forwards;
+
+        }
+        .yellow{
+            stroke: $yellow;
+            stroke-dasharray: 566 566;
+            stroke-dashoffset: 566;
+            animation: yellow 3s ease-in-out 1s forwards;
+        }
+    }
+}
+
+.content{
+    font-family: 'Arial', sans-serif;
+    &-percent{
+        .number{
+            font-size: 28px;
+            margin-bottom: 4px;
+            small{
+                font-size: 14px;
+            }
+            span{
+                position: relative;
+                &::after{
+                    content:'%';
+                    position: absolute;
+                    top: 0;
+                    right: 0px;
+                    font-size: 12px;
+                    color: $grey;
+                }
+            }
+            
+        }
+        .loyalty{
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+    }
+    &-level{
+        color: $yellow;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    &-info{
+        font-size: 8px;
+        color: $grey;
+        margin-bottom: 5px;
+    }
+    &-number{
+        color: $green;
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        &::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: -12px;
+            border: 5px solid transparent;
+            border-bottom: 5px solid $green;
+        }
+    }
+}
+
+
+.rating{
+    background: #fff;
+    position: absolute;
+    width: 200px;
+    right: 0;
+    top: -30px;
+    padding: 5px;
+}
+
+.rating-block{
+    display: flex;
+    width: 100%;
+    &-status{
+        font-weight: 600;
+        width: 40%;
+        font-size: 10px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+    &-numbers{
+        font-size: 10px;
+        width: 20%;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        .percent{
+            font-weight: 600;
+            text-align: right;
+        }
+        .quantity{
+            color: $dark-grey;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 12px;
+            &-icon{
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+    &-diagram{
+        width: 40%;
+        border: 1px solid $grey;
+        border-radius: 4px;
+        background: $bg-color;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        overflow: hidden;
+        position: relative;
+        .top-part{
+            height: 85%;
+        }
+        .bottom-part{
+            height: 15%;
+        }
+        .number-part{
+            position: absolute;
+            right: 10px;
+            width: 20px;
+            font-size: 10px;
+            top: 45%;
+            transform: translateY(-45%);
+        }
+    }
+}
+
+.promo{
+    .top-part{
+        background: $green;
+        width: 41%;
+    }
+    .bottom-part{
+        background: $light-green;
+        width: 38%;
+    }
+}
+
+.sceptic{
+    .top-part{
+        background: $yellow;
+        width: 50%;
+    }
+    .bottom-part{
+        background: $light-yellow;
+        width: 47%;
+    }
+}
+
+.critic{
+    .top-part{
+        background: $red;
+        width: 38%;
+    }
+    .bottom-part{
+        background: $light-red;
+        width: 42%;
+    }
+}
+
+@keyframes green{
+    from {
+        stroke-dashoffset: 566;
+    }
+    to{
+        stroke-dashoffset: 247;
+    }
+}
+
+@keyframes yellow{
+    from {
+        stroke-dashoffset: 566;
+    }
+    to{
+        stroke-dashoffset: 364;
+    }
+}
+
+

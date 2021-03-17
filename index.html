@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="block">
+        <div class="block-diagram">
+            
+            <div class="diagram">
+                <svg class="icon">
+                    <use xlink:href="./icons/sprite.svg#loyalty"></use>
+                </svg>
+                <svg width="100%" height="100%" viewBox="0 0 200 200" class="svg">
+                    <circle class="grey" cx="100" cy="100" r="90"></circle>
+                    <circle class="green" cx="100" cy="100" r="90"></circle>
+                    <circle class="yellow" cx="100" cy="100" r="90"></circle>
+                </svg>
+
+                <div class="diagram-content content">
+                    <div class="content-percent">
+                        <p class="number"><span>72<small>.7</small></span></p>
+                        <p class="loyalty">Лояльность</p>
+                    </div>
+
+                    <p class="content-level">
+                        ниже среднего
+                    </p>
+
+                    <p class="content-info">
+                        по отрасли: <span class="department">FMCG</span> <br />
+                        значений слева от медианы <br />
+                        <span class="first-number">52.0</span>% - <span class="second-number">83.1</span>%
+                    </p>
+
+                    <p class="content-number">
+                        3.1
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!-- block-diagram -->
+        <div class="block-rating">
+
+            <div class="rating">
+                <div class="rating-block promo">
+                    <div class="rating-block-status">Промоутеры</div>
+                    <div class="rating-block-numbers">
+                        <div class="numbers">
+                            <div class="percent">
+                                <span class="percent-value">32.0</span>%
+                            </div>
+                            <div class="quantity">
+                                <span class="quantity-value">81</span>
+                                <img class="quantity-icon" src="./icons/human_full.svg" alt="icon: human">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rating-block-diagram">
+                        <div class="top-part"></div>
+                        <div class="bottom-part"></div>
+                        <div class="number-part"><span class="percents">+1.2</span>%</div>
+                    </div>
+                </div>
+                <!-- promoters -->
+
+                <div class="rating-block sceptic">
+                    <div class="rating-block-status">Скептики</div>
+                    <div class="rating-block-numbers">
+                        <div class="numbers">
+                            <div class="percent">
+                                <span class="percent-value">39.1</span>%
+                            </div>
+                            <div class="quantity">
+                                <span class="quantity-value">8</span>
+                                <img class="quantity-icon" src="./icons/human_full.svg" alt="icon: human">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rating-block-diagram">
+                        <div class="top-part"></div>
+                        <div class="bottom-part"></div>
+                        <div class="number-part"><span class="percents">+4.8</span>%</div>
+                    </div>
+                </div>
+                <!-- sceptics -->
+
+                <div class="rating-block critic">
+                    <div class="rating-block-status">Критики</div>
+                    <div class="rating-block-numbers">
+                        <div class="numbers">
+                            <div class="percent">
+                                <span class="percent-value">79.8</span>%
+                            </div>
+                            <div class="quantity">
+                                <span class="quantity-value">7</span>
+                                <img class="quantity-icon" src="./icons/human_full.svg" alt="icon: human">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rating-block-diagram">
+                        <div class="top-part"></div>
+                        <div class="bottom-part"></div>
+                        <div class="number-part"><span class="percents">-9.7</span>%</div>
+                    </div>
+                </div>
+                <!-- critics -->
+
+            </div>
+
+        </div>
+        <!-- block-rating -->
+    </div>
+
+</body>
+</html>
